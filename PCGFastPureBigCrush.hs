@@ -1,4 +1,4 @@
-import HTestU
+import Test.HTestU
 import System.Random.PCG.Fast.Pure
 import System.IO.Unsafe (unsafePerformIO)
 
