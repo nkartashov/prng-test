@@ -1,3 +1,4 @@
+module Main where
 import  Test.HTestU
 import  Test.HTestU.Streaming
 
