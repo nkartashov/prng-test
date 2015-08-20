@@ -4,7 +4,10 @@
 name:                prng-test
 version:             0.1.0.0
 synopsis:            Little project to for running tests on Haskell PRNGs using HTestU
--- description:         
+description:         
+  This project is a basic example of how to use PRNGBench to test PRMGs.
+  Prng-test includes a runner of SmallCrush for a number of PRNGs as well as
+  a runners for splitmix and pcg-random.
 homepage:            https://github.com/nkartashov/prng-test
 license:             MIT
 license-file:        LICENSE
@@ -15,6 +18,10 @@ maintainer:          snailandmail@gmail.com
 build-type:          Simple
 -- extra-source-files:  
 cabal-version:       >=1.10
+
+source-repository head
+    type:     git
+    location: git://github.com/nkartashov/prng-test
 
 executable prng-test
   main-is:             Main.hs
