@@ -7,7 +7,7 @@ import  Test.HTestU.Streaming (RandomStream, nextStreamFromGen, leftSplitStreamF
 
 import System.Random (RandomGen, newStdGen)
 import System.Random.TF.Init
-import System.Random.PCG.Fast.Pure
+import qualified System.Random.PCG.Fast.Pure as PCG
 import System.Random.SplitMix
 
 -- | Given a 'name' and an 'genAction' for producing a generator instance and
@@ -22,7 +22,7 @@ runGen name genAction streamer = do
 -- Runners for smallCrush on default random number generators
 runStdGen = runGen "StdGen" newStdGen
 runTFRandom = runGen "TFRandom" newTFGen
-runPCGRandom = runGen "PCGRandom" $ join $ fmap save create
+runPCGRandom = runGen "PCGRandom" $ join $ fmap PCG.save PCG.create
 runSplitMix = runGen "SplitMix" newSplitMix64
 
 -- | Runs smallCrush on default random number generators using
